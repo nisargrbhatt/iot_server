@@ -1,0 +1,5 @@
+{% extends "base.html" %} {% block content %}
+<div class="box">
+  <img src="{{url_for('camera.stream',camera_id=camera_id)}}" />
+</div>
+{% endblock %}

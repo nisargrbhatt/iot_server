@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="title">Welcome, {{ name }}!!!</h1>
+<div class="box">
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Camera Name</th>
+      <th>Camera Video Url</th>
+      <th>Camera Audio Url</th>
+      <th>Camera Test Url</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      {% for data in cameras %}
+      <tr>
+        <th>{{data.id}}</th>
+        <td>{{data.name}}</td>
+        <td><a href="{{data.video_url}}">{{data.video_url}}</a></td>
+        <td><a href="{{data.audio_url}}">{{data.audio_url}}</a></td>
+        <td><a href="{{data.test_url}}">{{data.test_url}}</a></td>
+
+        <td>
+          <button class="button is-primary">
+            <a href="{{url_for('camera.stream',camera_id=data.id)}}"
+              >Show Camera</a
+            >
+          </button>
+          <button class="button is-danger">
+            <a href="{{url_for('camera.delete_camera',camera_id=data.id)}}"
+              >Delete</a
+            >
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

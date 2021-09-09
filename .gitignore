@@ -1,0 +1,9 @@
+__pycache__
+*/__pycache__
+.vscode
+*/.vscode
+venv
+iot_server_venv
+*/.env
+.env
+*/db.sqlite

@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %}
+<div class="column is-4 is-offset-4">
+  <h3 class="title">Add Camera</h3>
+  <div class="box">
+    <form action="/add_camera_post" method="POST">
+      <div class="field">
+        <div class="control">
+          <input
+            class="input is-large"
+            type="text"
+            name="name"
+            placeholder="Camera Name"
+            autofocus=""
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <input
+            class="input is-large"
+            type="text"
+            name="video_url"
+            placeholder="Camera Video Url"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input
+            class="input is-large"
+            type="text"
+            name="audio_url"
+            placeholder="Camera Audio Url"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <input
+            class="input is-large"
+            type="text"
+            name="test_url"
+            placeholder="Camera Test Url"
+          />
+        </div>
+      </div>
+
+      <button class="button is-block is-info is-large is-fullwidth">
+        Add Camera
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
